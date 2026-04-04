@@ -79,14 +79,17 @@ copilot
 
 # Invoke the Plan agent to create an implementation plan
 > /plan Add input validation for book year in the book app
+# 中文 Prompt：/plan 為 book app 的書籍年份新增 input validation
 
 # Invoke the Code-review agent on your changes
 > /review
 
 # Explore and Task agents are invoked automatically when relevant:
 > Run the test suite        # Uses Task agent
+# 中文 Prompt：執行測試套件
 
 > Explore how book data is loaded    # Uses Explore agent
+# 中文 Prompt：探索書籍資料是如何載入的
 ```
 
 Task Agent 在幕後運作，負責管理和追蹤進行中的事項，並以清晰整潔的格式回報結果：
@@ -181,6 +184,7 @@ copilot
 ```bash
 copilot --agent python-reviewer
 > Review @samples/book-app-project/books.py
+# 中文 Prompt：Review @samples/book-app-project/books.py
 ```
 
 > 💡 **切換 agent**：你可以隨時使用 `/agent` 或 `--agent` 切換至不同的 agent。若要回到標準的 Copilot CLI 體驗，使用 `/agent` 並選擇**無 agent**。
@@ -221,6 +225,7 @@ copilot --agent python-reviewer
 copilot
 
 > Add a function to search books by year range in the book app
+# 中文 Prompt：在書籍應用程式中新增一個依年份範圍搜尋書籍的函式
 ```
 
 **通用輸出**：
@@ -246,6 +251,7 @@ copilot
 # Select "python-reviewer"
 
 > Add a function to search books by year range in the book app
+# 中文 Prompt：在書籍應用程式中新增一個依年份範圍搜尋書籍的函式
 ```
 
 **專業輸出**：
@@ -314,22 +320,27 @@ def search_by_year_range(
 copilot
 
 > I want to add a "search by year range" feature to the book app
+# 中文 Prompt：我想在書籍應用程式中新增「依年份範圍搜尋」功能
 
 # Use python-reviewer for design
 > /agent
 # Select "python-reviewer"
 
 > @samples/book-app-project/books.py Design a find_by_year_range method. What's the best approach?
+# 中文 Prompt：@samples/book-app-project/books.py 設計一個 find_by_year_range 方法，什麼是最佳做法？
 
 # Switch to pytest-helper for test design
 > /agent
 # Select "pytest-helper"
 
 > @samples/book-app-project/tests/test_books.py Design test cases for a find_by_year_range method.
+# 中文 Prompt：@samples/book-app-project/tests/test_books.py 為 find_by_year_range 方法設計 test cases
 > What edge cases should we cover?
+# 中文 Prompt：我們應該涵蓋哪些 edge cases？
 
 # Synthesize both designs
 > Create an implementation plan that includes the method implementation and comprehensive tests.
+# 中文 Prompt：建立一個包含方法實作和完整 tests 的實作計畫
 ```
 
 **核心洞見**：你是指揮專家的架構師。他們處理細節，你掌握大局。
@@ -595,12 +606,14 @@ EOF
 # Now use them
 copilot --agent reviewer
 > Review @samples/book-app-project/books.py
+# 中文 Prompt：Review @samples/book-app-project/books.py
 
 # Or switch agents
 copilot
 > /agent
 # Select "documentor"
 > Document @samples/book-app-project/books.py
+# 中文 Prompt：為 @samples/book-app-project/books.py 撰寫文件
 ```
 
 ---
@@ -684,6 +697,7 @@ copilot
 > /agent
 # Select "data-validator" from the list
 > @samples/book-app-project/data.json Check for books with empty author fields or invalid years
+# 中文 Prompt：@samples/book-app-project/data.json 檢查作者欄位為空或年份無效的書籍
 ```
 
 **提示：** YAML frontmatter 中的 `description` 欄位是 agent 正常運作的必要條件。

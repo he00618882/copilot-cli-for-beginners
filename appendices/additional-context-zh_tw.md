@@ -16,10 +16,12 @@
 copilot
 
 > @screenshot.png What's happening in this UI?
+# 中文 Prompt：@screenshot.png 這個 UI 發生了什麼事？
 
 # Copilot analyzes the image and responds
 
 > @mockup.png @current-design.png Compare these two designs
+# 中文 Prompt：@mockup.png @current-design.png 比較這兩個設計
 
 # You can also drag and drop images or paste from clipboard
 ```
@@ -38,26 +40,31 @@ copilot
 **1. UI 除錯**
 ```bash
 > @bug-screenshot.png The button doesn't align properly. What CSS might cause this?
+# 中文 Prompt：@bug-screenshot.png 按鈕沒有正確對齊，可能是哪個 CSS 造成的？
 ```
 
 **2. 設計實作**
 ```bash
 > @figma-export.png Write the HTML and Tailwind CSS to match this design
+# 中文 Prompt：@figma-export.png 撰寫符合此設計的 HTML 和 Tailwind CSS
 ```
 
 **3. 錯誤分析**
 ```bash
 > @error-screenshot.png What does this error mean and how do I fix it?
+# 中文 Prompt：@error-screenshot.png 這個錯誤是什麼意思，要怎麼 fix？
 ```
 
 **4. 架構審查**
 ```bash
 > @whiteboard-diagram.png Convert this architecture diagram to a Mermaid diagram I can put in docs
+# 中文 Prompt：@whiteboard-diagram.png 將這張架構圖轉換成可放入文件的 Mermaid diagram
 ```
 
 **5. 前後對比**
 ```bash
 > @before.png @after.png What changed between these two versions of the UI?
+# 中文 Prompt：@before.png @after.png 這兩個 UI 版本之間有什麼變化？
 ```
 
 ### 結合圖片與程式碼
@@ -69,6 +76,7 @@ copilot
 
 > @screenshot-of-bug.png @src/components/Header.jsx
 > The header looks wrong in the screenshot. What's causing it in the code?
+# 中文 Prompt：截圖中的 header 看起來不對勁，是程式碼中的什麼造成的？
 ```
 
 ### 圖片使用技巧

@@ -131,6 +131,7 @@ copilot
 
 ```bash
 > Say hello and tell me what you can help with
+# 中文 Prompt：跟我打個招呼，並告訴我你能幫什麼忙
 ```
 
 收到回應後，你可以退出 CLI：
@@ -175,6 +176,7 @@ python book_app.py list
 cd ../..   # Back to the repository root if needed
 copilot 
 > What does @samples/book-app-project/book_app.py do?
+# 中文 Prompt：@samples/book-app-project/book_app.py 這個程式在做什麼？
 ```
 
 **預期輸出**：book app 主要功能和指令的摘要說明。

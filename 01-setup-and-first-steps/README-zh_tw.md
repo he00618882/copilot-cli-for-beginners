@@ -38,12 +38,16 @@ copilot
 
 ```
 > Explain what a dataclass is in Python in simple terms
+# 中文 Prompt：用簡單的方式解釋 Python 中的 dataclass 是什麼
 
 > Write a function that sorts a list of dictionaries by a specific key
+# 中文 Prompt：寫一個函式，根據特定的 key 來排序字典列表
 
 > What's the difference between a list and a tuple in Python?
+# 中文 Prompt：Python 中 list 和 tuple 有什麼差別？
 
 > Give me 5 best practices for writing clean Python code
+# 中文 Prompt：給我 5 個寫 clean Python code 的最佳實踐
 ```
 
 不使用 Python 嗎？沒問題！直接用你選擇的語言提問就好。
@@ -77,6 +81,7 @@ copilot
 
 ```
 > Review @samples/book-app-project/book_app.py for code quality issues and suggest improvements
+# 中文 Prompt：Review @samples/book-app-project/book_app.py 的 code quality 問題並建議改進方式
 ```
 
 > 💡 **`@` 符號有什麼用途？** `@` 符號告訴 Copilot CLI 讀取一個檔案。你將在 Chapter 02 學到所有相關知識。現在只需照樣複製指令即可。
@@ -104,6 +109,7 @@ copilot
 
 ```
 > Explain what @samples/book-app-project/books.py does in simple terms
+# 中文 Prompt：用簡單的方式解釋 @samples/book-app-project/books.py 在做什麼
 ```
 
 ---
@@ -160,6 +166,7 @@ Common pattern: Read from JSON → Work with Python objects → Write back to JS
 ```
 > Write a Python function that takes a list of books and returns statistics: 
   total count, number read, number unread, oldest and newest book
+# 中文 Prompt：寫一個 Python 函式，接收書籍列表並回傳統計資訊：總數、已讀數量、未讀數量、最舊和最新的書
 ```
 
 ---
@@ -254,10 +261,13 @@ copilot
 copilot
 
 > Review @samples/book-app-project/utils.py and suggest improvements
+# 中文 Prompt：Review @samples/book-app-project/utils.py 並建議改進方式
 
 > Add type hints to all functions
+# 中文 Prompt：為所有函式新增 type hints
 
 > Make the error handling more robust
+# 中文 Prompt：讓 error handling 更加健全
 
 > /exit
 ```
@@ -280,6 +290,7 @@ Plan 模式幫助你在撰寫任何程式碼前建立逐步計畫。使用 `/pla
 copilot
 
 > /plan Add a "mark as read" command to the book app
+# 中文 Prompt：/plan 為 book app 新增一個「標記為已讀」指令
 ```
 
 **Plan 模式輸出：**（你的輸出可能不同）
@@ -327,9 +338,11 @@ Proceed with implementation? [Y/n]
 ```bash
 # 產生程式碼
 copilot -p "Write a function that checks if a number is even or odd"
+# 中文 Prompt：copilot -p "寫一個函式來檢查數字是奇數還是偶數"
 
 # 快速取得說明
 copilot -p "How do I read a JSON file in Python?"
+# 中文 Prompt：copilot -p "在 Python 中如何讀取 JSON 檔案？"
 ```
 
 **關鍵洞察**：Programmatic 模式給你一個快速答案然後退出。不需對話，只需輸入 → 輸出。
@@ -491,10 +504,13 @@ copilot
 copilot
 
 > Review @samples/book-app-project/book_app.py - what could be improved?
+# 中文 Prompt：Review @samples/book-app-project/book_app.py，有什麼可以改進的？
 
 > Refactor the if/elif chain into a more maintainable structure
+# 中文 Prompt：Refactor if/elif 鏈為更易維護的結構
 
 > Add type hints to all the handler functions
+# 中文 Prompt：為所有 handler 函式新增 type hints
 
 > /exit
 ```
@@ -507,6 +523,7 @@ copilot
 copilot
 
 > /plan Add a search feature to the book app that can find books by title or author
+# 中文 Prompt：/plan 為 book app 新增搜尋功能，可以依書名或作者搜尋
 
 # 審查計畫
 # 批准或修改
@@ -522,6 +539,7 @@ copilot
 for file in samples/book-app-project/*.py; do
   echo "Reviewing $file..."
   copilot --allow-all -p "Quick code quality review of @$file - critical issues only"
+  # 中文 Prompt："快速 review @$file 的 code quality，只列出 critical issues"
 done
 ```
 
@@ -532,7 +550,8 @@ done
 Get-ChildItem samples/book-app-project/*.py | ForEach-Object {
   $relativePath = "samples/book-app-project/$($_.Name)";
   Write-Host "Reviewing $relativePath...";
-  copilot --allow-all -p "Quick code quality review of @$relativePath - critical issues only" 
+  copilot --allow-all -p "Quick code quality review of @$relativePath - critical issues only"
+  # 中文 Prompt："快速 review @$relativePath 的 code quality，只列出 critical issues"
 }
 ```
 
@@ -570,9 +589,13 @@ Get-ChildItem samples/book-app-project/*.py | ForEach-Object {
 **可嘗試的範例提示詞：**
 ```bash
 > @samples/book-app-project/utils.py What does each function in this file do?
+# 中文 Prompt：@samples/book-app-project/utils.py 這個檔案中每個函式的功能是什麼？
 > Add validation to get_user_choice() so it handles empty input and non-numeric entries
+# 中文 Prompt：為 get_user_choice() 新增驗證，讓它能處理空白輸入和非數字輸入
 > What happens if get_book_details() receives an empty string for the title? Add guards for that.
+# 中文 Prompt：如果 get_book_details() 收到空字串作為書名會怎樣？請加上防護措施
 > Add a comprehensive docstring to get_book_details() with parameter descriptions and return values
+# 中文 Prompt：為 get_book_details() 新增完整的 docstring，包含參數說明和回傳值
 ```
 
 **常見問題：**

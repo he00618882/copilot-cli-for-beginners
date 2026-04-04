@@ -70,6 +70,7 @@
 copilot
 
 > Review @samples/book-app-project/book_app.py for code quality
+# 中文 Prompt：Review @samples/book-app-project/book_app.py 的 code quality
 ```
 
 ---
@@ -93,6 +94,7 @@ copilot
 copilot
 
 > Review @samples/book-app-project/utils.py for input validation issues. Check for: missing validation, error handling gaps, and edge cases
+# 中文 Prompt：Review @samples/book-app-project/utils.py 的 input validation 問題，檢查：缺少的驗證、error handling 缺口和邊緣案例
 ```
 
 
@@ -104,6 +106,7 @@ copilot
 copilot
 
 > @samples/book-app-project/ Review this entire project. Create a markdown checklist of issues found, categorized by severity
+# 中文 Prompt：Review @samples/book-app-project/ 整個專案，建立一份依嚴重性分類的 markdown 問題清單
 ```
 
 ### 互動式程式碼審查
@@ -117,14 +120,17 @@ copilot
 > - Input validation
 > - Error handling
 > - Code style and best practices
+# 中文 Prompt：Review @samples/book-app-project/book_app.py，包含：Input validation、Error handling、Code style 和最佳實踐
 
 # Copilot CLI 提供詳細審查
 
 > The user input handling - are there any edge cases I'm missing?
+# 中文 Prompt：user input handling 有我遺漏的 edge cases 嗎？
 
 # Copilot CLI 顯示空字串、特殊字元等潛在問題
 
 > Create a checklist of all issues found, prioritized by severity
+# 中文 Prompt：建立一份依嚴重性排序的所有發現問題清單
 
 # Copilot CLI 生成按優先順序排列的行動項目
 ```
@@ -141,6 +147,7 @@ copilot
 > - High (bugs, incorrect behavior)
 > - Medium (performance, maintainability)
 > - Low (style, minor improvements)
+# 中文 Prompt：Review @samples/book-app-project/ 並建立發現問題的 markdown 清單，依以下分類：Critical（資料遺失風險、crash）、High（bug、行為錯誤）、Medium（效能、可維護性）、Low（style、小改善）
 ```
 
 ### 理解 Git 變更（使用 /review 的重要事項）
@@ -197,10 +204,13 @@ copilot
 copilot
 
 > @samples/book-app-project/book_app.py The command handling uses if/elif chains. Refactor it to use a dictionary dispatch pattern.
+# 中文 Prompt：@samples/book-app-project/book_app.py 的指令處理使用了 if/elif 串，請 refactor 成 dictionary dispatch 模式
 
 > @samples/book-app-project/utils.py Add type hints to all functions
+# 中文 Prompt：為 @samples/book-app-project/utils.py 所有函式加上 type hints
 
 > @samples/book-app-project/book_app.py Extract the book display logic into utils.py for better separation of concerns
+# 中文 Prompt：將 @samples/book-app-project/book_app.py 的書籍顯示邏輯提取到 utils.py 以達到更好的 separation of concerns
 ```
 
 > 💡 **重構新手？** 在處理複雜的轉換之前，先從簡單的請求開始，如新增型別提示或改善變數名稱。
@@ -227,6 +237,7 @@ copilot
 
 > @samples/book-app-project/utils.py @samples/book-app-project/book_app.py
 > The utils.py file has print statements mixed with logic. Refactor to separate display functions from data processing.
+# 中文 Prompt：@samples/book-app-project/utils.py 和 book_app.py，utils.py 的 print 語句與邏輯混雜，請 refactor 以分離顯示函式和資料處理
 ```
 
 ### 改善錯誤處理
@@ -238,6 +249,7 @@ copilot
 
 > @samples/book-app-project/utils.py @samples/book-app-project/books.py
 > These files have inconsistent error handling. Suggest a unified approach using custom exceptions.
+# 中文 Prompt：@samples/book-app-project/utils.py 和 books.py 的 error handling 不一致，建議使用 custom exceptions 的統一方法
 ```
 
 ### 新增文件
@@ -252,6 +264,7 @@ copilot
 > - Document return values
 > - Note any exceptions raised
 > - Add usage examples
+# 中文 Prompt：為 @samples/book-app-project/books.py 所有方法加上完整的 docstrings，包含：參數型別和描述、回傳值說明、拋出的 exceptions、使用範例
 ```
 
 ### 帶測試的安全重構
@@ -262,10 +275,12 @@ copilot
 copilot
 
 > @samples/book-app-project/books.py Before refactoring, generate tests for current behavior
+# 中文 Prompt：在 refactor 之前，為 @samples/book-app-project/books.py 目前的行為產生 test
 
 # 先獲取測試
 
 > Now refactor the BookCollection class to use a context manager for file operations
+# 中文 Prompt：現在將 BookCollection class refactor 成使用 context manager 進行檔案操作
 
 # 自信地重構 - 測試驗證行為已被保留
 ```
@@ -291,12 +306,15 @@ copilot
 
 # 模式：「預期 X 但得到 Y」
 > @samples/book-app-buggy/books_buggy.py Users report that searching for "The Hobbit" returns no results even though it's in the data. Debug why.
+# 中文 Prompt：@samples/book-app-buggy/books_buggy.py 用戶回報搜尋「The Hobbit」沒有結果，但它明明在資料中，請 debug 原因
 
 # 模式：「意外的行為」
 > @samples/book-app-buggy/book_app_buggy.py When I remove a book that doesn't exist, the app says it was removed. Help me find why.
+# 中文 Prompt：@samples/book-app-buggy/book_app_buggy.py 移除不存在的書籍時，app 卻說已移除成功，請幫我找出原因
 
 # 模式：「錯誤的結果」
 > @samples/book-app-buggy/books_buggy.py When I mark one book as read, ALL books get marked. What's the bug?
+# 中文 Prompt：@samples/book-app-buggy/books_buggy.py 標記一本書為已讀時，所有書都被標記了，這個 bug 在哪？
 ```
 
 > 💡 **調試技巧**：描述*症狀*（你看到的）和*期望*（應該發生什麼）。Copilot CLI 會處理其餘的部分。
@@ -325,6 +343,7 @@ copilot
 >
 > Users report: "Finding books by author name doesn't work for partial names"
 > Debug why this happens
+# 中文 Prompt：@samples/book-app-buggy/books_buggy.py 用戶回報：「用作者名稱搜尋書籍對部分名稱無效」，請 debug 原因
 ```
 
 **Copilot CLI 會做什麼**：
@@ -352,6 +371,7 @@ return [b for b in self.books if author.lower() in b.author.lower()]
 copilot
 
 > @samples/buggy-code/python/user_service.py Find all security vulnerabilities in this Python user service
+# 中文 Prompt：找出 @samples/buggy-code/python/user_service.py 中所有的 security vulnerabilities
 ```
 
 這個檔案示範了你在生產應用中會遇到的真實世界安全模式。
@@ -376,6 +396,7 @@ copilot
 >     at show_books (book_app.py:19)
 >
 > @samples/book-app-project/book_app.py Explain why and how to fix it
+# 中文 Prompt：我遇到這個錯誤：AttributeError: 'NoneType' object has no attribute 'title'（在 book_app.py:19），請說明 @samples/book-app-project/book_app.py 的原因及 fix 方式
 ```
 
 ### 帶測試案例的調試
@@ -387,6 +408,7 @@ copilot
 
 > @samples/book-app-buggy/books_buggy.py The remove_book function has a bug. When I try to remove "Dune",
 > it also removes "Dune Messiah". Debug this: explain the root cause and provide a fix.
+# 中文 Prompt：@samples/book-app-buggy/books_buggy.py 的 remove_book 函式有 bug，移除「Dune」時也連帶移除了「Dune Messiah」，請 debug：說明根本原因並提供 fix
 ```
 
 ### 在程式碼中追蹤問題
@@ -399,6 +421,7 @@ copilot
 > Users report that the book list numbering starts at 0 instead of 1.
 > @samples/book-app-buggy/book_app_buggy.py @samples/book-app-buggy/books_buggy.py
 > Trace through the list display flow and identify where the issue occurs
+# 中文 Prompt：用戶回報書單編號從 0 開始而非 1，請追蹤 @samples/book-app-buggy/book_app_buggy.py 和 books_buggy.py 的清單顯示流程，找出問題所在
 ```
 
 ### 理解資料問題
@@ -410,6 +433,7 @@ copilot
 
 > @samples/book-app-project/data.json @samples/book-app-project/books.py
 > Sometimes the JSON file gets corrupted and the app crashes. How should we handle this gracefully?
+# 中文 Prompt：@samples/book-app-project/data.json 和 books.py，JSON 檔案有時損壞導致 app crash，應如何優雅地處理？
 ```
 
 </details>
@@ -443,6 +467,7 @@ copilot
 > - Finding by author
 > - Marking as read
 > - Edge cases with empty data
+# 中文 Prompt：為 @samples/book-app-project/books.py 產生完整的 pytest test，包含：新增書籍、移除書籍、依標題搜尋、依作者搜尋、標記已讀、空資料的 edge cases
 ```
 
 ---
@@ -518,6 +543,7 @@ copilot
 > - Invalid year formats
 > - Very long titles
 > - Special characters in author names
+# 中文 Prompt：為 @samples/book-app-project/utils.py 的 get_book_details 產生完整的 pytest test，涵蓋：有效輸入、空字串、無效的年份格式、非常長的標題、作者名稱中的特殊字元
 ```
 
 ### 執行測試
@@ -528,6 +554,7 @@ copilot
 copilot
 
 > How do I run the tests? Show me the pytest command.
+# 中文 Prompt：如何執行 test？請給我 pytest 指令
 
 # Copilot CLI 回應：
 # cd samples/book-app-project && python -m pytest tests/
@@ -548,6 +575,7 @@ copilot
 > - Finding books when collection is empty
 > - File permission errors during save
 > - Concurrent access to the book collection
+# 中文 Prompt：為 @samples/book-app-project/books.py 產生以下情境的 test：新增重複書籍（相同標題和作者）、以部分標題比對移除書籍、書單為空時搜尋書籍、儲存時的檔案權限錯誤、書單的並發存取
 ```
 
 ### 在現有檔案中新增測試
@@ -563,6 +591,7 @@ copilot
 > - Author with multiple first names
 > - Empty string as author
 > - Author name with accented characters
+# 中文 Prompt：為 @samples/book-app-project/books.py 的 find_by_author 函式產生額外的 edge case test：含連字號的作者名（如「Jean-Paul Sartre」）、有多個名字的作者、空字串作為作者、含重音字元的作者名
 ```
 
 </details>
@@ -591,6 +620,7 @@ git diff --staged
 # 使用[慣例 Commit](../GLOSSARY-zh_tw.md#conventional-commit) 格式生成 commit 訊息
 # （結構化訊息如「feat(books): add search」或「fix(data): handle empty input」）
 copilot -p "Generate a conventional commit message for: $(git diff --staged)"
+# 中文 Prompt：copilot -p "為以下變更產生 conventional commit message：$(git diff --staged)"
 
 # 輸出：「feat(books): add partial author name search
 #
@@ -619,6 +649,7 @@ copilot -p "Generate a conventional commit message for: $(git diff --staged)"
 ```bash
 # 這個 commit 改變了什麼？
 copilot -p "Explain what this commit does: $(git show HEAD --stat)"
+# 中文 Prompt：copilot -p "說明這個 commit 做了什麼：$(git show HEAD --stat)"
 ```
 
 ### PR 描述
@@ -635,6 +666,7 @@ Include:
 - Why these changes were made
 - Testing done
 - Breaking changes? (yes/no)"
+# 中文 Prompt：copilot -p "為以下變更產生 pull request 描述：$(git log main..HEAD --oneline)，包含：變更摘要、為何做這些變更、測試情況、Breaking changes？（是/否）"
 ```
 
 ### 在互動模式中使用 /pr 操作當前分支
@@ -655,6 +687,7 @@ copilot
 # 推送前的最後確認
 copilot -p "Review these changes for issues before I push:
 $(git diff main..HEAD)"
+# 中文 Prompt：copilot -p "在我推送前 review 這些變更是否有問題：$(git diff main..HEAD)"
 ```
 
 ### 使用 /delegate 執行背景任務
@@ -723,11 +756,14 @@ copilot
 
 > Users report: 'Finding books by author name doesn't work for partial names'
 > @samples/book-app-project/books.py Analyze and identify the likely cause
+# 中文 Prompt：用戶回報：「用作者名稱搜尋書籍對部分名稱無效」，請分析 @samples/book-app-project/books.py 並找出可能原因
 
 # 2. 調試問題（在同一工作階段中繼續）
 > Based on the analysis, show me the find_by_author function and explain the issue
+# 中文 Prompt：根據分析，給我看 find_by_author 函式並說明問題所在
 
 > Fix the find_by_author function to handle partial name matches
+# 中文 Prompt：fix find_by_author 函式以處理部分名稱比對
 
 # 3. 為修正生成測試
 > @samples/book-app-project/books.py Generate pytest tests specifically for:
@@ -735,9 +771,11 @@ copilot
 > - Partial author name match
 > - Case-insensitive matching
 > - Author name not found
+# 中文 Prompt：為 @samples/book-app-project/books.py 專門產生以下的 pytest test：完整作者名稱比對、部分作者名稱比對、大小寫不敏感比對、找不到作者名稱
 
 # 4. 生成 commit 訊息
 copilot -p "Generate commit message for: $(git diff --staged)"
+# 中文 Prompt：copilot -p "為以下變更產生 commit message：$(git diff --staged)"
 
 # 輸出：「fix(books): support partial author name search」
 ```
@@ -773,6 +811,7 @@ copilot -p "Generate commit message for: $(git diff --staged)"
 3. **Commit 訊息挑戰**：對 book app 檔案做任何小改動，暫存它（`git add .`），然後執行：
    ```bash
    copilot -p "Generate a conventional commit message for: $(git diff --staged)"
+   # 中文 Prompt：copilot -p "為以下變更產生 conventional commit message：$(git diff --staged)"
    ```
    這個訊息比你快速寫的更好嗎？
 
@@ -808,9 +847,11 @@ copilot
 
 # 步驟 1：審查
 > @samples/book-app-project/books.py Review the remove_book() function. What edge cases are not handled?
+# 中文 Prompt：Review @samples/book-app-project/books.py 的 remove_book() 函式，有哪些 edge cases 未處理？
 
 # 步驟 2：重構
 > Improve remove_book() to use case-insensitive matching and return a clear message when the book isn't found. Show me the before and after code.
+# 中文 Prompt：改善 remove_book() 以使用大小寫不敏感比對，並在找不到書籍時回傳清楚的訊息，給我修改前後的程式碼
 
 # 步驟 3：測試
 > Generate pytest tests for the improved remove_book() function, including:
@@ -818,12 +859,14 @@ copilot
 > - Case-insensitive matching ("dune" should remove "Dune")
 > - Book not found returns appropriate response
 > - Removing from an empty collection
+# 中文 Prompt：為改善後的 remove_book() 函式產生 pytest test，包含：移除存在的書籍、大小寫不敏感比對（「dune」應能移除「Dune」）、找不到書籍時回傳適當回應、從空集合中移除
 
 # 步驟 4：審查
 > /review
 
 # 步驟 5：Commit
 > Generate a conventional commit message for this refactor
+# 中文 Prompt：為這次 refactor 產生 conventional commit message
 ```
 
 **提示：** 改善 `remove_book()` 後，試著問 Copilot CLI：「Are there any other functions in this file that could benefit from the same improvements?」它可能會建議對 `find_book_by_title()` 或 `find_by_author()` 進行類似的改動。
@@ -864,6 +907,7 @@ copilot
 
 # 試試這樣：
 > Review @samples/book-app-project/book_app.py for input validation, error handling, and edge cases
+# 中文 Prompt：Review @samples/book-app-project/book_app.py 的 input validation、error handling 和 edge cases
 ```
 
 **測試不匹配我的框架** - 指定框架：
@@ -872,6 +916,7 @@ copilot
 copilot
 
 > @samples/book-app-project/books.py Generate tests using pytest (not unittest)
+# 中文 Prompt：為 @samples/book-app-project/books.py 使用 pytest（非 unittest）產生 test
 ```
 
 **重構改變了行為** - 要求 Copilot CLI 保留行為：
@@ -880,6 +925,7 @@ copilot
 copilot
 
 > @samples/book-app-project/book_app.py Refactor command handling to use dictionary dispatch. IMPORTANT: Maintain identical external behavior - no breaking changes
+# 中文 Prompt：將 @samples/book-app-project/book_app.py 的指令處理 refactor 成使用 dictionary dispatch，重要：保持完全相同的外部行為，不得有 breaking changes
 ```
 
 </details>

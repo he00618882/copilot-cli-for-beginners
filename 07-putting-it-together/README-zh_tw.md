@@ -48,6 +48,7 @@ copilot
 
 > I need to add a "list unread" command to the book app that shows only
 > books where read is False. What files need to change?
+# 中文 Prompt：我需要在 book app 新增一個「list unread」指令，只顯示 read 為 False 的書籍。哪些檔案需要變更？
 
 # Copilot creates high-level plan...
 
@@ -57,6 +58,7 @@ copilot
 
 > @samples/book-app-project/books.py Design a get_unread_books method.
 > What is the best approach?
+# 中文 Prompt：為 @samples/book-app-project/books.py 設計一個 get_unread_books 方法，最佳做法是什麼？
 
 # Python-reviewer agent produces:
 # - Method signature and return type
@@ -69,6 +71,7 @@ copilot
 
 > @samples/book-app-project/tests/test_books.py Design test cases for
 > filtering unread books.
+# 中文 Prompt：為 @samples/book-app-project/tests/test_books.py 設計篩選未讀書籍的 test cases
 
 # Pytest-helper agent produces:
 # - Test cases for empty collections
@@ -77,11 +80,15 @@ copilot
 
 # 實作
 > Add a get_unread_books method to BookCollection in books.py
+# 中文 Prompt：在 books.py 的 BookCollection 中新增 get_unread_books 方法
 > Add a "list unread" command option in book_app.py
+# 中文 Prompt：在 book_app.py 中新增「list unread」指令選項
 > Update the help text in the show_help function
+# 中文 Prompt：更新 show_help 函式中的說明文字
 
 # 測試
 > Generate comprehensive tests for the new feature
+# 中文 Prompt：為新功能產生完整的測試
 
 # Multiple tests are generated similar to the following:
 # - Happy path (3 tests) — filters correctly, excludes read, includes unread
@@ -97,6 +104,7 @@ copilot
 
 # 或者，如果你想讓 Copilot 從終端機起草 PR，可以自然地詢問
 > Create a pull request titled "Feature: Add list unread books command"
+# 中文 Prompt：建立一個標題為「Feature: Add list unread books command」的 pull request
 ```
 
 **傳統方式**：在編輯器、終端機、測試執行器、文件和 GitHub UI 之間切換。每次切換都造成情境喪失和摩擦。
@@ -130,6 +138,7 @@ copilot
 
 # 階段 1：從 GitHub 了解 bug（MCP 提供此功能）
 > Get the details of issue #1
+# 中文 Prompt：取得 issue #1 的詳情
 
 # 了解："find_by_author doesn't work with partial names"
 
@@ -138,17 +147,20 @@ copilot
 
 # 階段 3：找到相關程式碼
 > @samples/book-app-project/books.py Show me the find_by_author method
+# 中文 Prompt：顯示 @samples/book-app-project/books.py 中的 find_by_author 方法
 
 # 階段 4：取得專家分析
 > /agent
 # Select "python-reviewer"
 
 > Analyze this method for issues with partial name matching
+# 中文 Prompt：分析這個方法在部分名稱匹配方面的問題
 
 # Agent identifies: Method uses exact equality instead of substring matching
 
 # 階段 5：依照 agent 的指導修復
 > Implement the fix using lowercase comparison and 'in' operator
+# 中文 Prompt：使用小寫比較和 'in' 運算子實作 fix
 
 # 階段 6：產生測試
 > /agent
@@ -156,11 +168,14 @@ copilot
 
 > Generate pytest tests for find_by_author with partial matches
 > Include test cases: partial name, case variations, no matches
+# 中文 Prompt：為 find_by_author 的部分匹配功能產生 pytest 測試，包含以下 test cases：部分名稱、大小寫變化、無結果
 
 # 階段 7：提交和 PR
 > Generate a commit message for this fix
+# 中文 Prompt：為這個 fix 產生 commit message
 
 > Create a pull request linking to issue #1
+# 中文 Prompt：建立一個連結到 issue #1 的 pull request
 ```
 
 ---
@@ -191,6 +206,7 @@ if [ -n "$STAGED" ]; then
     # --allow-all auto-approves file reads/writes so the hook can run unattended.
     # Only use this in automated scripts. In interactive sessions, let Copilot ask for permission.
     REVIEW=$(timeout 60 copilot --allow-all -p "Quick security review of @$file - critical issues only" 2>/dev/null)
+    # 中文 Prompt：快速 security review @$file — 僅回報 critical 問題
 
     # Check if timeout occurred
     if [ $? -eq 124 ]; then
@@ -245,10 +261,12 @@ copilot
 
 # 階段 1：使用情境掌握全貌
 > @samples/book-app-project/ Explain the high-level architecture of this codebase
+# 中文 Prompt：解釋 @samples/book-app-project/ 這個程式碼庫的高層架構
 
 # 階段 2：了解特定流程
 > @samples/book-app-project/book_app.py Walk me through what happens
 > when a user runs "python book_app.py add"
+# 中文 Prompt：引導我了解 @samples/book-app-project/book_app.py 中當使用者執行「python book_app.py add」時發生了什麼
 
 # 階段 3：使用 agent 取得專家分析
 > /agent
@@ -256,12 +274,15 @@ copilot
 
 > @samples/book-app-project/books.py Are there any design issues,
 > missing error handling, or improvements you would recommend?
+# 中文 Prompt：@samples/book-app-project/books.py 有任何設計問題、缺少 error handling，或你會建議的改進嗎？
 
 # 階段 4：找到可以處理的事項（MCP 提供 GitHub 存取）
 > List open issues labeled "good first issue"
+# 中文 Prompt：列出標記為「good first issue」的未解決 issue
 
 # 階段 5：開始貢獻
 > Pick the simplest open issue and outline a plan to fix it
+# 中文 Prompt：選出最簡單的未解決 issue，並擬定 fix 計畫
 ```
 
 這個工作流程將 `@` 情境、agent 和 MCP 結合到單一的入門 session 中，正是本章前面提到的整合模式。
@@ -283,14 +304,17 @@ copilot
 ```bash
 # 好的做法
 > Get the details of issue #42
+# 中文 Prompt：取得 issue #42 的詳情
 > /agent
 # Select python-reviewer
 > Analyze this issue
+# 中文 Prompt：分析這個 issue
 
 # 效果較差的做法
 > /agent
 # Select python-reviewer
 > Fix login bug
+# 中文 Prompt：fix login bug
 # Agent 沒有 issue 情境
 ```
 
@@ -303,10 +327,12 @@ copilot
 > /agent
 # Select python-reviewer
 > Review this authentication code for security issues
+# 中文 Prompt：Review 這段驗證程式碼的 security 問題
 
 # Skill：當你的提示符合 skill 描述時自動啟動的模組化能力
 # （你必須先建立它們 — 參見第 05 章）
 > Generate comprehensive tests for this code
+# 中文 Prompt：為這段程式碼產生完整的測試
 # 如果你有已設定的測試 skill，它會自動啟動
 
 # 自訂指令（.github/copilot-instructions.md）：永遠啟用的
@@ -363,6 +389,7 @@ Commits:
 $COMMITS
 
 Include: Summary, Changes Made, Testing Done, Screenshots Needed"
+# 中文 Prompt：為以下內容產生 PR 描述：分支：$BRANCH，提交記錄：$COMMITS，包含：摘要、變更內容、測試完成情況、是否需要截圖
 ```
 
 ### CI/CD 整合

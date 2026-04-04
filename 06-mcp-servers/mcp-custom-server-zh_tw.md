@@ -130,6 +130,7 @@ if __name__ == "__main__":
 copilot
 
 > Look up the book with ISBN 978-0-547-92822-7
+# 中文 Prompt：查詢 ISBN 978-0-547-92822-7 的書籍
 
 {
   "title": "The Hobbit",
@@ -139,6 +140,7 @@ copilot
 }
 
 > Search for books by Orwell
+# 中文 Prompt：搜尋 Orwell 的書籍
 
 [
   {
@@ -151,6 +153,7 @@ copilot
 ]
 
 > List all available books
+# 中文 Prompt：列出所有可用的書籍
 
 [Shows all books in the database with ISBNs]
 ```
