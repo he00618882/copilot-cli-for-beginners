@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄鐘</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="work-mode">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div>
+        <h1>番茄鐘</h1>
+        <p class="status-label">狀態：<strong id="statusText">專注中</strong></p>
+      </div>
+      <div class="count-card">
+        <span>今天完成</span>
+        <strong id="completedCount">0</strong>
+        <span>個</span>
+      </div>
+    </header>
+
+    <main class="main-panel">
+      <section class="timer-card" id="timerCard">
+        <div class="ring-frame">
+          <svg class="progress-ring" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+            <circle class="ring-bg" cx="160" cy="160" r="140" />
+            <circle class="ring-progress" cx="160" cy="160" r="140" />
+          </svg>
+          <div class="timer-text" id="timerDisplay" aria-live="polite">25:00</div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button class="primary-button" id="startPauseBtn">開始</button>
+        <button class="secondary-button" id="resetBtn">重置</button>
+      </section>
+
+      <section class="settings-card">
+        <div class="setting-item">
+          <label for="workMinutes">工作時間</label>
+          <div class="input-group">
+            <input id="workMinutes" type="number" min="1" max="120" value="25" />
+            <span>分鐘</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label for="shortBreakMinutes">休息時間</label>
+          <div class="input-group">
+            <input id="shortBreakMinutes" type="number" min="1" max="60" value="5" />
+            <span>分鐘</span>
+          </div>
+        </div>
+        <div class="hint-box">
+          <p>完成 4 個番茄鐘後，下一次休息時間將自動變成 <strong>15 分鐘</strong>。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
