@@ -1,0 +1,203 @@
+:root {
+  --bg: #0f1116;
+  --surface: rgba(255, 255, 255, 0.08);
+  --text: #f7f7f7;
+  --muted: #bbc3d6;
+  --accent-work: #ff5d5d;
+  --accent-break: #4cd37d;
+  --accent-work-soft: rgba(255, 93, 93, 0.18);
+  --accent-break-soft: rgba(76, 211, 125, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #181c26 0%, #090b11 55%, #050608 100%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(960px, 92vw);
+  padding: 32px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 32px 120px rgba(0, 0, 0, 0.28);
+}
+
+.status-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 18px 22px;
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.status-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.mode-label {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.timer-ring {
+  position: relative;
+  width: min(520px, 100%);
+  max-width: 520px;
+  aspect-ratio: 1;
+  margin: 0 auto 32px;
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-bg,
+.progress-bar {
+  fill: none;
+  stroke-width: 16;
+}
+
+.progress-bg {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  stroke: var(--accent-work);
+  stroke-linecap: round;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  transition: stroke 0.3s ease;
+}
+
+.time-display {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(4.6rem, 8vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.btn {
+  min-width: 160px;
+  padding: 18px 24px;
+  border: none;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-main {
+  background: linear-gradient(135deg, var(--accent-work), #ff8a8a);
+  color: #111;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.settings {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 26px;
+}
+
+.setting-item {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  display: grid;
+  gap: 10px;
+}
+
+.setting-item label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.setting-item input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.setting-item span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.info-panel {
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.info-panel div {
+  margin-bottom: 12px;
+}
+
+.count {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.tip {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 24px;
+  }
+
+  .controls {
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

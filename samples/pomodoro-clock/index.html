@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄鐘計時器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="status-panel" id="statusPanel">
+      <div class="status-label" id="statusLabel">專注中</div>
+      <div class="mode-label" id="modeLabel">工作時間</div>
+    </section>
+
+    <section class="timer-ring">
+      <svg viewBox="0 0 220 220" class="progress-circle">
+        <circle class="progress-bg" cx="110" cy="110" r="100" />
+        <circle class="progress-bar" cx="110" cy="110" r="100" id="progressBar" />
+      </svg>
+      <div class="time-display" id="timeDisplay">25:00</div>
+    </section>
+
+    <section class="controls">
+      <button class="btn btn-main" id="startPauseBtn">開始</button>
+      <button class="btn btn-secondary" id="resetBtn">重置</button>
+    </section>
+
+    <section class="settings">
+      <div class="setting-item">
+        <label>工作時間</label>
+        <input type="number" id="workInput" min="1" value="25" />
+        <span>分鐘</span>
+      </div>
+      <div class="setting-item">
+        <label>休息時間</label>
+        <input type="number" id="breakInput" min="1" value="5" />
+        <span>分鐘</span>
+      </div>
+    </section>
+
+    <section class="info-panel">
+      <div>今日完成</div>
+      <div class="count" id="completedCount">0</div>
+      <div class="tip">每完成 4 個番茄鐘，自動變成 15 分鐘長休息</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
